@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.36.10",
+    "@clerk/themes": "^2.4.50",
     "@emailjs/browser": "^4.4.1",
     "@formspree/react": "^3.0.0",
     "@google/generative-ai": "^0.24.1",

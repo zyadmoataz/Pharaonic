@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://guidly.ai/sitemap.xml',
+    sitemap: 'https://pharaonic.vercel.app//sitemap.xml',
   };
 }

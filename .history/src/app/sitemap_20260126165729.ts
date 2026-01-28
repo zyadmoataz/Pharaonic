@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://guidly.ai'; // Enterprise domain placeholder
+  const baseUrl = 'https://pharaonic.vercel.app/'; // Enterprise domain placeholder
 
   const routes = [
     '',

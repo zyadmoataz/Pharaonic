@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Guidly | Egypt, Without the Shock",
     description: "Enterprise-grade safety and planning for your Egyptian journey.",
-    url: "https://guidly.ai",
+    url: "https://pharaonic.vercel.app/",
     siteName: "Guidly",
     locale: "en_US",
     type: "website",
