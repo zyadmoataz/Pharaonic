@@ -1,37 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pharaonic: Egypt Travel Platform
 
-## Getting Started
+A Next.js travel platform concept for visitors to Egypt, covering AI trip planning, travel permits, private guides, membership cards and travel stories.
 
-First, run the development server:
+**Live demo:** https://pharaonic.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<img width="1900" height="904" alt="pharaonic-home" src="https://github.com/user-attachments/assets/df038360-fb4d-4e51-a8f3-007080a5cf9e" />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages and features
+- Animated landing page with hero, destination highlights and membership tiers (Voyager, Premium, Heritage) with a comparison table
+- AI Trip Planner and personalised itinerary pages 
+- Recommendations and curated expeditions
+- Travel permits request page 
+- Private tour guides directory
+- Blog with articles, travel stories and testimonials
+- Feedback, About, Contact, Help, Terms and Privacy pages
+- SEO: page metadata, Open Graph and Twitter cards
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Pharaonic
+## Tech stack
+Next.js · TypeScript · Tailwind CSS · Deployed on Vercel
