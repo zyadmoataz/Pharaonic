@@ -9,8 +9,6 @@ A modern **Next.js & TypeScript** travel platform for visitors exploring Egyptâ€
 
 **Live Demo:** [https://pharaonic-guide.vercel.app/](https://pharaonic-guide.vercel.app/)
 
-<img width="1900" height="904" alt="pharaonic-home" src="https://github.com/user-attachments/assets/df038360-fb4d-4e51-a8f3-007080a5cf9e" />
-
 ---
 
 ## Key Features & Architecture
