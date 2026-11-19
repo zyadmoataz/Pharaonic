@@ -7,7 +7,7 @@
 
 A modern **Next.js & TypeScript** travel platform for visitors exploring Egypt—combining AI-assisted itinerary planning, digital travel permit workflows, verified private guide discovery, and tiered membership benefits.
 
-**Live Demo:** [https://pharaonic-guide.vercel.app/](https://pharaonic-guide.vercel.app/)
+**Live Demo:** [https://pharaonic.vercel.app/](https://pharaonic.vercel.app/)
 
 ---
 
