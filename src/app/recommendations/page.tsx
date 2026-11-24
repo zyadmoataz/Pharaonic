@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, MapPin, Calendar, ArrowRight, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SafeImage } from "@/components/SafeImage";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { SafeSignedIn as SignedIn, SafeSignedOut as SignedOut, SafeSignInButton as SignInButton } from "@/lib/auth-client";
 
 const pre_defined_plans = [
     {
@@ -150,11 +150,11 @@ export default function RecommendationsPage() {
                                     <div className="grid grid-cols-1 gap-4 mb-4">
                                         <div className="flex items-center gap-3">
                                             <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold"><Sparkles className="w-4 h-4" /></div>
-                                            <div className="text-[10px] text-zinc-400 font-black uppercase tracking-widest leading-tight">Hotel: <span className="text-white">{(plan as any).hotel}</span></div>
+                                            <div className="text-[10px] text-zinc-400 font-black uppercase tracking-widest leading-tight">Hotel: <span className="text-white">{plan.hotel}</span></div>
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold"><MapPin className="w-4 h-4" /></div>
-                                            <div className="text-[10px] text-zinc-400 font-black uppercase tracking-widest leading-tight">Transport: <span className="text-white">{(plan as any).transport}</span></div>
+                                            <div className="text-[10px] text-zinc-400 font-black uppercase tracking-widest leading-tight">Transport: <span className="text-white">{plan.transport}</span></div>
                                         </div>
                                     </div>
                                     <ul className="space-y-4">

@@ -14,7 +14,7 @@ import {
     Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { SafeSignedIn as SignedIn, SafeSignedOut as SignedOut, SafeSignInButton as SignInButton } from "@/lib/auth-client";
 
 const licenseTypes = [
     {

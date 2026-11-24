@@ -5,7 +5,7 @@ import { Shield, Lock, CreditCard, ChevronRight, CheckCircle, Rocket, Landmark, 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useAuth, SignIn, useUser } from "@clerk/nextjs";
+import { useSafeAuth as useAuth, SafeSignIn as SignIn, useSafeUser as useUser } from "@/lib/auth-client";
 
 const CheckoutContent = () => {
     const searchParams = useSearchParams();
@@ -20,6 +20,7 @@ const CheckoutContent = () => {
     const cities = searchParams.get("cities") || "";
 
     const [step, setStep] = useState(1);
+    const [receiptId] = useState(() => `NV-${Math.random().toString(36).slice(2, 11).toUpperCase()}`);
     const [paymentMethod, setPaymentMethod] = useState("credit_card");
     const [cardDetails, setCardDetails] = useState({ number: "", expiry: "", cvc: "" });
     const [formData, setFormData] = useState({
@@ -28,12 +29,6 @@ const CheckoutContent = () => {
         arrivalDate: "",
         visaType: tier === "Tourist" || tier === "Business" ? tier : "Tourist",
     });
-
-    useEffect(() => {
-        if (user?.fullName && !formData.name) {
-            setFormData(prev => ({ ...prev, name: user.fullName || "" }));
-        }
-    }, [user, formData.name]);
 
     const nextStep = () => setStep(s => s + 1);
     const prevStep = () => setStep(s => Math.max(1, s - 1));
@@ -346,7 +341,7 @@ const CheckoutContent = () => {
                                     <div className="pt-6 grid grid-cols-2 gap-4 max-w-sm mx-auto border-t border-white/5 mt-10">
                                         <div className="text-left">
                                             <div className="text-[10px] text-zinc-500 font-black uppercase mb-1">Receipt ID</div>
-                                            <div className="text-white font-mono text-xs uppercase">NV-{Math.random().toString(36).substr(2, 9).toUpperCase()}</div>
+                                            <div className="text-white font-mono text-xs uppercase">{receiptId}</div>
                                         </div>
                                         <div className="text-right">
                                             <div className="text-[10px] text-zinc-500 font-black uppercase mb-1">Status</div>

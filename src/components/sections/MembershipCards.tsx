@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 import { Shield, Star, Zap, Check, ArrowRight, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { SafeSignedIn as SignedIn, SafeSignedOut as SignedOut, SafeSignInButton as SignInButton } from "@/lib/auth-client";
 
 const cards = [
     {
         tier: "Voyager",
         status: "Digital Base",
-        price: "$199",
+        price: "$99",
         description: "Essential sovereign identity for the modern traveler. Automated logistics and connectivity.",
         features: [
             "Official 5G Tourist SIM (100GB)",
@@ -25,7 +25,7 @@ const cards = [
     {
         tier: "Premium",
         status: "Priority Logistics",
-        price: "$899",
+        price: "$499",
         description: "Advanced maneuverability through the Egyptian sector. Fast-track entry and private transit.",
         features: [
             "All Voyager Heritage Benefits",
@@ -41,7 +41,7 @@ const cards = [
     {
         tier: "Heritage",
         status: "Elite Sovereignty",
-        price: "$2,499",
+        price: "$999",
         description: "The ultimate archaeological access tier. Personal experts and high-security deployment.",
         features: [
             "All Premium Sector Benefits",

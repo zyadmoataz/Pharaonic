@@ -1,4 +1,4 @@
-import { SignIn } from "@clerk/nextjs";
+import { SafeSignIn as SignIn } from "@/lib/auth-client";
 import { Shield, Lock } from "lucide-react";
 
 export default function SignInPage() {

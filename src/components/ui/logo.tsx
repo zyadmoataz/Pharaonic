@@ -41,7 +41,7 @@ export const Logo: React.FC<LogoProps> = ({ className, size = "md" }) => {
                     "font-bold tracking-[0.3em] uppercase text-gold/80 italic",
                     size === "sm" ? "text-[8px]" : size === "md" ? "text-[10px]" : size === "lg" ? "text-sm" : "text-base"
                 )}>
-                    Tour Platform
+                    The future of solo travelling
                 </span>
             </div>
         </div>

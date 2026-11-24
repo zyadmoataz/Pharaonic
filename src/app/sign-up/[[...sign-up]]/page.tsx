@@ -1,4 +1,4 @@
-import { SignUp } from "@clerk/nextjs";
+import { SafeSignUp as SignUp } from "@/lib/auth-client";
 
 export default function SignUpPage() {
     return (

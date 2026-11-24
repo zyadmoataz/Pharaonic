@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useUser } from "@clerk/nextjs";
+import { useSafeUser as useUser, SafeSignedIn as SignedIn, SafeSignedOut as SignedOut, SafeSignInButton as SignInButton } from "@/lib/auth-client";
 import {
     Sparkles, MapPin, Shield, CheckCircle,
     ShoppingBag, Landmark, Globe,
@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SafeImage } from "@/components/SafeImage";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 // Expanded City & Activity Data
 const city_data = [
@@ -70,7 +69,14 @@ const city_hotels = {
 const PersonalizedPlan = () => {
     const { user } = useUser();
     const [step, setStep] = useState(1);
-    const [hoveredAsset, setHoveredAsset] = useState<any>(null);
+    const [hoveredAsset, setHoveredAsset] = useState<{
+        id?: string;
+        type?: string;
+        price?: number;
+        name: string;
+        image: string;
+        desc?: string;
+    } | null>(null);
     const [formData, setFormData] = useState({
         name: "",
         cities: [] as string[],
@@ -80,10 +86,6 @@ const PersonalizedPlan = () => {
         selectedActivities: [] as string[],
         visaType: "E-Visa",
     });
-
-    useEffect(() => {
-        if (user && !formData.name) setFormData(prev => ({ ...prev, name: user.fullName || "" }));
-    }, [user]);
 
     const toggleCity = (city: string) => {
         setFormData(prev => ({
@@ -308,13 +310,13 @@ const PersonalizedPlan = () => {
                                     <p className="text-zinc-400 text-sm font-medium">Define your primary mobility layer for inter-sector transitions.</p>
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                         {[
-                                            { id: "car", name: "Executive Sedan", icon: <Truck />, desc: "Private authorized driver for 24/7 sector mobility." },
-                                            { id: "bus", name: "Tactical Coach", icon: <HardHat />, desc: "High-capacity group transit with logistics support." },
-                                            { id: "air", name: "Sovereign Air", icon: <Plane />, desc: "Private domestic flight protocols for fast-track travel." }
+                                            { id: "car" as const, name: "Executive Sedan", icon: <Truck />, desc: "Private authorized driver for 24/7 sector mobility." },
+                                            { id: "bus" as const, name: "Tactical Coach", icon: <HardHat />, desc: "High-capacity group transit with logistics support." },
+                                            { id: "air" as const, name: "Sovereign Air", icon: <Plane />, desc: "Private domestic flight protocols for fast-track travel." }
                                         ].map(t => (
                                             <button
                                                 key={t.id}
-                                                onClick={() => setFormData({ ...formData, transport: t.id as any })}
+                                                onClick={() => setFormData({ ...formData, transport: t.id })}
                                                 className={cn(
                                                     "p-10 rounded-[3rem] border transition-all text-left flex flex-col gap-4 group",
                                                     formData.transport === t.id ? "bg-gold text-black border-gold scale-105" : "bg-white/5 border-white/10 text-zinc-600 hover:border-white/20"

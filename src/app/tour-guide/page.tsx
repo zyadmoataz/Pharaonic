@@ -2,7 +2,7 @@
 
 import { SafeImage } from "@/components/SafeImage";
 import { cn } from "@/lib/utils";
-import { useUser, useAuth, SignInButton } from "@clerk/nextjs";
+import { useSafeUser as useUser, useSafeAuth as useAuth, SafeSignInButton as SignInButton } from "@/lib/auth-client";
 import { ChevronRight, Globe, MapPin, Search, Star, UserCheck } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AlertCircle, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
@@ -29,16 +29,12 @@ export const SafeImage: React.FC<SafeImageProps> = ({
     height
 }) => {
     const [status, setStatus] = useState<"loading" | "loaded" | "error">("loading");
-    const [imgSrc, setImgSrc] = useState(src);
-
-    useEffect(() => {
-        // Optimize Unsplash URLs if they don't have parameters
+    const imgSrc = useMemo(() => {
         if (src && src.includes("images.unsplash.com") && !src.includes("auto=format")) {
-            const separator = src && src.includes("?") ? "&" : "?";
-            setImgSrc(`${src}${separator}auto=format&fit=crop&q=80&w=1200`);
-        } else {
-            setImgSrc(src);
+            const separator = src.includes("?") ? "&" : "?";
+            return `${src}${separator}auto=format&fit=crop&q=80&w=1200`;
         }
+        return src;
     }, [src]);
 
     // Handle fill vs fixed dimensions

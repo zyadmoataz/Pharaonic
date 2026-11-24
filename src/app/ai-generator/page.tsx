@@ -125,7 +125,7 @@ export default function AIGenerator() {
     const [step, setStep] = useState(0); // 0: Intro, 1-4: Questions, 5: Processing, 6: Results
     const [answers, setAnswers] = useState<Record<string, string>>({});
     const [logs, setLogs] = useState<string[]>([]);
-    const [results, setResults] = useState<any[]>([]);
+    const [results, setResults] = useState<typeof destinations>([]);
 
     const startGenerator = () => setStep(1);
 
@@ -246,7 +246,7 @@ export default function AIGenerator() {
                                         className="group p-8 rounded-[3rem] bg-white/[0.03] border border-white/10 hover:border-gold/50 hover:bg-white/[0.05] transition-all text-left relative overflow-hidden flex flex-col items-start justify-between min-h-[300px]"
                                     >
                                         <div className="w-14 h-14 rounded-2xl bg-gold/10 text-gold flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                            {React.cloneElement(opt.icon as React.ReactElement<any>, { size: 28 })}
+                                            {React.cloneElement(opt.icon as React.ReactElement<{ size?: number }>, { size: 28 })}
                                         </div>
                                         <div>
                                             <h3 className="text-lg font-black text-white uppercase tracking-tight mb-2">{opt.label}</h3>

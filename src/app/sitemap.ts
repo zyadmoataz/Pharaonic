@@ -1,27 +1,30 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/env";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://pharaonic.vercel.app/'; // Enterprise domain placeholder
-
   const routes = [
-    '',
-    '/about',
-    '/services',
-    '/stories',
-    '/why-us',
-    '/pricing',
-    '/card',
-    '/personalized-plan',
-    '/help',
-    '/contact',
-    '/privacy',
-    '/terms',
+    "",
+    "/about",
+    "/services",
+    "/stories",
+    "/why-us",
+    "/card",
+    "/ai-generator",
+    "/personalized-plan",
+    "/recommendations",
+    "/licenses",
+    "/tour-guide",
+    "/blogs",
+    "/help",
+    "/contact",
+    "/privacy",
+    "/terms",
   ];
 
   return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
+    url: `${siteConfig.url}${route}`,
     lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    changeFrequency: "weekly" as const,
+    priority: route === "" ? 1 : 0.8,
   }));
 }

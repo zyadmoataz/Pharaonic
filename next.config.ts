@@ -49,12 +49,12 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.clerk.accounts.dev https://clerk.pharaonic.ai",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.clerk.accounts.dev https://clerk.pharaonic.ai https://challenges.cloudflare.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "img-src 'self' data: https: https://*.unsplash.com https://grainy-gradients.vercel.app",
+              "img-src 'self' data: blob: https: https://img.clerk.com https://*.unsplash.com https://grainy-gradients.vercel.app",
               "font-src 'self' https://fonts.gstatic.com",
-              "connect-src 'self' https://*.clerk.accounts.dev https://clerk.pharaonic.ai https://api.emailjs.com https://api.formspree.io https://formspree.io https://clerk-telemetry.com",
-              "frame-src 'self' https://*.clerk.accounts.dev https://clerk.pharaonic.ai",
+              "connect-src 'self' https://*.clerk.accounts.dev https://clerk.pharaonic.ai https://challenges.cloudflare.com https://api.emailjs.com https://api.formspree.io https://formspree.io https://clerk-telemetry.com",
+              "frame-src 'self' https://*.clerk.accounts.dev https://clerk.pharaonic.ai https://challenges.cloudflare.com",
               "worker-src 'self' blob:"
             ].join('; ')
           }
